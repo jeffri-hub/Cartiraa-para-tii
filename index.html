@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Mi Amor 💖</title>
+<title>Para ti, Dianitaa💖</title>
 <style>
 body{
     margin:0;
@@ -79,7 +79,7 @@ button{
 <body>
 
 <h1>Para ti, Mi Amor 💖</h1>
-<h3>De Jeffri</h3>
+<h3>De Jeffri, con todo mi amor</h3>
 
 <div class="card">
     <h2>Tiempo juntos ⏳</h2>
@@ -109,7 +109,7 @@ button{
 
 <script>
 // Fecha de inicio (CAMBIAR LUEGO)
-const startDate = new Date("2024-02-14T00:00:00");
+const startDate = new Date("2025-07-01T00:00:00");
 
 function updateTimer(){
     const now = new Date();
@@ -128,8 +128,21 @@ function updateTimer(){
 setInterval(updateTimer,1000);
 
 function poema(){
-    document.getElementById("poema").innerText =
-    "Desde que llegaste a mi vida, todo es más bonito. Eres mi lugar favorito en el mundo 💖";
+    function poema(){
+    const texto = "Dianitaa, desde que llegaste a mi vida todo es más bonito. Gracias por cada risa, cada momento y cada recuerdo juntos. Eres mi lugar favorito en el mundo 💖";
+    let i = 0;
+    const contenedor = document.getElementById("poema");
+    contenedor.innerText = "";
+    
+    const escribir = setInterval(()=>{
+        contenedor.innerText += texto.charAt(i);
+        i++;
+        if(i >= texto.length){
+            clearInterval(escribir);
+        }
+    },40);
+}
+
 }
 
 function toggleMusic(){
