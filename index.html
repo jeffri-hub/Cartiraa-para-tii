@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para ti, Dianitaa💖</title>
+<title>Para Dianitaa 💖</title>
+
 <style>
 body{
     margin:0;
@@ -64,6 +65,7 @@ button{
 .poema{
     margin-top:15px;
     font-style:italic;
+    min-height:40px;
 }
 .heart{
     position:fixed;
@@ -76,9 +78,10 @@ button{
 }
 </style>
 </head>
+
 <body>
 
-<h1>Para ti, Mi Amor 💖</h1>
+<h1>Para ti, Dianitaa 💖</h1>
 <h3>De Jeffri, con todo mi amor</h3>
 
 <div class="card">
@@ -93,7 +96,7 @@ button{
 
 <div class="card">
     <h2>Escribe tu carta 💌</h2>
-    <textarea placeholder="Escribe algo bonito..."></textarea>
+    <textarea placeholder="Escribe algo bonito para Dianitaa..."></textarea>
 </div>
 
 <div class="card">
@@ -108,7 +111,7 @@ button{
 <button onclick="toggleMusic()">🎻 Música</button>
 
 <script>
-// Fecha de inicio (CAMBIAR LUEGO)
+// Fecha real aproximada: mitad del 2025
 const startDate = new Date("2025-07-01T00:00:00");
 
 function updateTimer(){
@@ -128,21 +131,20 @@ function updateTimer(){
 setInterval(updateTimer,1000);
 
 function poema(){
-    function poema(){
-    const texto = "Dianitaa, desde que llegaste a mi vida todo es más bonito. Gracias por cada risa, cada momento y cada recuerdo juntos. Eres mi lugar favorito en el mundo 💖";
-    let i = 0;
     const contenedor = document.getElementById("poema");
-    contenedor.innerText = "";
+    contenedor.innerHTML = "";
     
-    const escribir = setInterval(()=>{
-        contenedor.innerText += texto.charAt(i);
-        i++;
-        if(i >= texto.length){
-            clearInterval(escribir);
+    const texto = "Dianitaa, desde que llegaste a mi vida todo es más bonito. Gracias por cada risa, cada momento y cada recuerdo juntos. Eres mi lugar favorito en el mundo 💖";
+    
+    let i = 0;
+    function escribir(){
+        if(i < texto.length){
+            contenedor.innerHTML += texto.charAt(i);
+            i++;
+            setTimeout(escribir, 40);
         }
-    },40);
-}
-
+    }
+    escribir();
 }
 
 function toggleMusic(){
@@ -150,7 +152,7 @@ function toggleMusic(){
     music.paused ? music.play() : music.pause();
 }
 
-// corazones cayendo
+// Corazones cayendo
 setInterval(()=>{
     const heart = document.createElement("div");
     heart.className="heart";
@@ -164,3 +166,4 @@ setInterval(()=>{
 
 </body>
 </html>
+
